@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		103982E1227EABB900AD6910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 103982E0227EABB900AD6910 /* main.m */; };
+		103982F4227EABE400AD6910 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 103982EA227EABE300AD6910 /* Utilities.m */; };
+		103982F5227EABE400AD6910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103982ED227EABE300AD6910 /* Main.storyboard */; };
+		103982F6227EABE400AD6910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 103982EF227EABE300AD6910 /* AppDelegate.m */; };
+		103982F7227EABE400AD6910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103982F0227EABE400AD6910 /* Assets.xcassets */; };
+		103982F8227EABE400AD6910 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 103982F1227EABE400AD6910 /* ViewController.m */; };
+		103982FE227EAC2E00AD6910 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 103982FA227EAC2E00AD6910 /* GCDAsyncUdpSocket.m */; };
+		1039830D227EAC7E00AD6910 /* MouseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039830B227EAC7E00AD6910 /* MouseEvent.m */; };
+		10398311227EACA400AD6910 /* UDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1039830F227EACA300AD6910 /* UDPClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		103982D1227EABB800AD6910 /* MousePort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MousePort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		103982DF227EABB900AD6910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		103982E0227EABB900AD6910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		103982E9227EABE300AD6910 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		103982EA227EABE300AD6910 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		103982EB227EABE300AD6910 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		103982EE227EABE300AD6910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		103982EF227EABE300AD6910 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		103982F0227EABE400AD6910 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		103982F1227EABE400AD6910 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		103982F2227EABE400AD6910 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		103982F3227EABE400AD6910 /* MousePortSender.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MousePortSender.entitlements; sourceTree = "<group>"; };
+		103982FA227EAC2E00AD6910 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		103982FC227EAC2E00AD6910 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		10398301227EAC4B00AD6910 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		10398302227EAC4B00AD6910 /* ConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDelegate.h; sourceTree = "<group>"; };
+		1039830B227EAC7E00AD6910 /* MouseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MouseEvent.m; sourceTree = "<group>"; };
+		1039830C227EAC7E00AD6910 /* MouseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MouseEvent.h; sourceTree = "<group>"; };
+		1039830F227EACA300AD6910 /* UDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPClient.m; sourceTree = "<group>"; };
+		10398310227EACA300AD6910 /* UDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPClient.h; sourceTree = "<group>"; };
+		10398312227EADBA00AD6910 /* MousePort-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MousePort-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		103982CE227EABB800AD6910 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		103982C8227EABB800AD6910 = {
+			isa = PBXGroup;
+			children = (
+				103982D3227EABB800AD6910 /* MousePort-Mac */,
+				103982D2227EABB800AD6910 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		103982D2227EABB800AD6910 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				103982D1227EABB800AD6910 /* MousePort.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		103982D3227EABB800AD6910 /* MousePort-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				103982EB227EABE300AD6910 /* AppDelegate.h */,
+				103982EF227EABE300AD6910 /* AppDelegate.m */,
+				103982ED227EABE300AD6910 /* Main.storyboard */,
+				103982F2227EABE400AD6910 /* ViewController.h */,
+				103982F1227EABE400AD6910 /* ViewController.m */,
+				10398305227EAC5300AD6910 /* Model */,
+				103982E8227EABE300AD6910 /* Utilities */,
+				103982F0227EABE400AD6910 /* Assets.xcassets */,
+				103982DF227EABB900AD6910 /* Info.plist */,
+				103982E0227EABB900AD6910 /* main.m */,
+				103982F3227EABE400AD6910 /* MousePortSender.entitlements */,
+				10398312227EADBA00AD6910 /* MousePort-Prefix.pch */,
+			);
+			path = "MousePort-Mac";
+			sourceTree = "<group>";
+		};
+		103982E8227EABE300AD6910 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1039830E227EACA300AD6910 /* UDPClient */,
+				103982F9227EAC2E00AD6910 /* GCD */,
+				103982E9227EABE300AD6910 /* Utilities.h */,
+				103982EA227EABE300AD6910 /* Utilities.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		103982F9227EAC2E00AD6910 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				103982FC227EAC2E00AD6910 /* GCDAsyncUdpSocket.h */,
+				103982FA227EAC2E00AD6910 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		10398300227EAC4B00AD6910 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				10398301227EAC4B00AD6910 /* Connection.h */,
+				10398302227EAC4B00AD6910 /* ConnectionDelegate.h */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		10398305227EAC5300AD6910 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1039830A227EAC7E00AD6910 /* MouseEvent */,
+				10398300227EAC4B00AD6910 /* Connection */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1039830A227EAC7E00AD6910 /* MouseEvent */ = {
+			isa = PBXGroup;
+			children = (
+				1039830C227EAC7E00AD6910 /* MouseEvent.h */,
+				1039830B227EAC7E00AD6910 /* MouseEvent.m */,
+			);
+			path = MouseEvent;
+			sourceTree = "<group>";
+		};
+		1039830E227EACA300AD6910 /* UDPClient */ = {
+			isa = PBXGroup;
+			children = (
+				10398310227EACA300AD6910 /* UDPClient.h */,
+				1039830F227EACA300AD6910 /* UDPClient.m */,
+			);
+			path = UDPClient;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		103982D0227EABB800AD6910 /* MousePort */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 103982E5227EABB900AD6910 /* Build configuration list for PBXNativeTarget "MousePort" */;
+			buildPhases = (
+				103982CD227EABB800AD6910 /* Sources */,
+				103982CE227EABB800AD6910 /* Frameworks */,
+				103982CF227EABB800AD6910 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MousePort;
+			productName = "MousePort-Mac";
+			productReference = 103982D1227EABB800AD6910 /* MousePort.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		103982C9227EABB800AD6910 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = iPAWiND;
+				TargetAttributes = {
+					103982D0227EABB800AD6910 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 103982CC227EABB800AD6910 /* Build configuration list for PBXProject "MousePort" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				global,
+			);
+			mainGroup = 103982C8227EABB800AD6910;
+			productRefGroup = 103982D2227EABB800AD6910 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				103982D0227EABB800AD6910 /* MousePort */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		103982CF227EABB800AD6910 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				103982F7227EABE400AD6910 /* Assets.xcassets in Resources */,
+				103982F5227EABE400AD6910 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		103982CD227EABB800AD6910 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				103982F4227EABE400AD6910 /* Utilities.m in Sources */,
+				103982FE227EAC2E00AD6910 /* GCDAsyncUdpSocket.m in Sources */,
+				103982E1227EABB900AD6910 /* main.m in Sources */,
+				103982F8227EABE400AD6910 /* ViewController.m in Sources */,
+				1039830D227EAC7E00AD6910 /* MouseEvent.m in Sources */,
+				10398311227EACA400AD6910 /* UDPClient.m in Sources */,
+				103982F6227EABE400AD6910 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		103982ED227EABE300AD6910 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				103982EE227EABE300AD6910 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		103982E3227EABB900AD6910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		103982E4227EABB900AD6910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		103982E6227EABB900AD6910 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MousePort-Mac/MousePort_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "MousePort-Mac/MousePort-Prefix.pch";
+				INFOPLIST_FILE = "MousePort-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ipawind.MousePort-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		103982E7227EABB900AD6910 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MousePort-Mac/MousePort_Mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEPLOYMENT_POSTPROCESSING = NO;
+				GCC_PREFIX_HEADER = "MousePort-Mac/MousePort-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				INFOPLIST_FILE = "MousePort-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ipawind.MousePort-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		103982CC227EABB800AD6910 /* Build configuration list for PBXProject "MousePort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				103982E3227EABB900AD6910 /* Debug */,
+				103982E4227EABB900AD6910 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		103982E5227EABB900AD6910 /* Build configuration list for PBXNativeTarget "MousePort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				103982E6227EABB900AD6910 /* Debug */,
+				103982E7227EABB900AD6910 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 103982C9227EABB800AD6910 /* Project object */;
+}
