@@ -11,7 +11,7 @@ cd ~/Downloads && curl -LO "https://github.com/iPAWiND/MousePort/releases/downlo
 CodeSign app with sandbox entitlements
 
 ```
-cd ~/Downlaods && codesign -fs - --entitlements entitlements.plist MousePort.app
+cd ~/Downloads && codesign -fs - --entitlements entitlements.plist MousePort.app
 ```
 
 Upon first launch, you may need to allow it via GateKeeper (System Preferences-General)
