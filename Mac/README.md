@@ -16,6 +16,10 @@ cd ~/Downlaods && codesign -fs - --entitlements entitlements.plist MousePort.app
 
 Upon first launch, you may need to allow it via GateKeeper (System Preferences-General)
 
+### Note
+
+The app uses full screen mode, to quit, you can use (command+q)
+
 ## Privacy Notice
 
 The client app is signed with sandbox entitlements, and is only allowed to act as a network client and server.
