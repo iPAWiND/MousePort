@@ -21,3 +21,7 @@ Upon first launch, you may need to allow it via GateKeeper (System Preferences-G
 The client app is signed with sandbox entitlements, and is only allowed to act as a network client and server.
 
 All connections are made between your computer and iOS device on local network.
+
+## Credits
+
+[CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)
