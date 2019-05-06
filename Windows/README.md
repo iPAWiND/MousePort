@@ -6,3 +6,6 @@ Download latest release from [here](https://github.com/iPAWiND/MousePort/release
 
 Unzip and run MousePort.exe
 
+### Note
+
+The app uses full screen mode, to quit, you can use (alt+f4)
