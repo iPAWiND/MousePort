@@ -26,6 +26,13 @@ Open the injected app
 
 Happy catching 🖱
 
+## Troubleshooting
+
+Client app stucks on searching
+* Quit and re-launch it
+* Quit and re-launch the injected app on your iOS device
+* Make sure both your computer and iOS device are on the same network
+
 ## Acknowledgments
 
 * This project is distributed publicly in hope that it will be useful for many people
