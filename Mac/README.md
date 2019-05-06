@@ -1,4 +1,4 @@
-# MousePort Client
+# MousePort Mac Client
 
 MousePort Client for macOS
 
