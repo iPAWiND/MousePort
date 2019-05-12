@@ -33,3 +33,9 @@ Add source
 ```
 https://apt.ipawind.com
 ```
+
+## DISCLAIMER
+
+This project is designed for non-jailbroken devices, however, we've added basic springboard support for you to experience it.
+
+This DOES NOT mean we will continue to support jailbroken platforms.
