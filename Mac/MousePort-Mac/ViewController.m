@@ -6,27 +6,28 @@
 //  Copyright © 2019 iPAWiND. All rights reserved.
 //
 
+
 #import "ViewController.h"
 #import "UDPClient.h"
 #import "Utilities/Utilities.h"
 #import "MouseEvent.h"
 
 @interface ViewController () <ConnectionDelegate>
-    
-    @property (strong, nonatomic) UDPClient *udpConnection;
-    
-    @property (strong, nonatomic) NSArray *possibleIps;
-    
-    @property (strong, nonatomic) id<Connection> connection;
-    
-    @property (strong) IBOutlet NSTextField *connectedLabel;
-    @property (strong) IBOutlet NSView *searchingView;
-    @property (strong) IBOutlet NSProgressIndicator *spinner;
-    
-    @end
+
+@property (strong, nonatomic) UDPClient *udpConnection;
+
+@property (strong, nonatomic) NSArray *possibleIps;
+
+@property (strong, nonatomic) id<Connection> connection;
+
+@property (strong) IBOutlet NSTextField *connectedLabel;
+@property (strong) IBOutlet NSView *searchingView;
+@property (strong) IBOutlet NSProgressIndicator *spinner;
+
+@end
 
 @implementation ViewController
-    
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,7 +39,7 @@
     
     [self updateView];
 }
-    
+
 -(void)initConnection {
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -59,16 +60,15 @@
             [clients addObject:client];
         }
         
-        sleep(5);
+        sleep(2.5);
         
-        // If after 5 seconds we don't have a connection, it means none of the ips responded, check again;
+        // If after 2.5 seconds we don't have a connection, it means none of the ips responded, check again;
         if (self.connection) return;
         
         [self initConnection];
-        
     });
 }
-    
+
 -(void)connectionDidConnect:(id <Connection>)connection {
     
     // Make sure no connection is active, otherwise no need to set it again.
@@ -80,7 +80,7 @@
     
     [self updateView];
 }
-    
+
 -(void)connectionDidDisconnect:(id <Connection>)connection {
     
     // Make sure it's the connection we're monitoring
@@ -92,12 +92,12 @@
     
     [self updateView];
 }
-    
+
 - (void)connectionDidReceiveData:(NSData *)data {
     
 }
-    
-    
+
+
 -(void)updateView {
     
     bool connected = self.connection != nil;
@@ -106,7 +106,7 @@
     [self.connectedLabel setHidden:!connected];
     [self.spinner startAnimation:nil];
 }
-    
+
 -(void)viewDidAppear {
     [super viewDidAppear];
     
@@ -116,46 +116,66 @@
     
     [self.view enterFullScreenMode:[NSScreen mainScreen] withOptions:dict];
 }
-    
-    
+
+
 -(void)addEvent {
     
-    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskMouseMoved | NSEventMaskLeftMouseUp | NSEventMaskLeftMouseDown | NSEventMaskLeftMouseDragged | NSEventMaskRightMouseUp | NSEventMaskRightMouseDown | NSEventMaskRightMouseDragged handler:^NSEvent * _Nullable(NSEvent * _Nonnull event) {
+    [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskMouseMoved | NSEventMaskLeftMouseUp | NSEventMaskLeftMouseDown | NSEventMaskLeftMouseDragged | NSEventMaskRightMouseUp | NSEventMaskRightMouseDown | NSEventMaskRightMouseDragged | NSEventMaskScrollWheel handler:^NSEvent * _Nullable(NSEvent * _Nonnull event) {
         
         // Make sure we've a connection
         if (!self.connection) { return event; }
         
-        NSLog(@"Delta: %f, %f", event.deltaX, event.deltaY);
-        
-        NSLog(@"Event: %@", event);
+        int deltaX = event.deltaX;
+        int deltaY = event.deltaY;
         
         MouseEventType type;
         
         switch (event.type) {
             case kCGEventMouseMoved:
-            type = moved;
-            break;
+                type = moved;
+                break;
             case kCGEventLeftMouseDragged:
-            type = leftDragged;
-            break;
+                type = leftDragged;
+                break;
             case kCGEventLeftMouseUp:
-            type = leftUp;
-            break;
+                type = leftUp;
+                break;
             case kCGEventLeftMouseDown:
-            type = leftDown;
-            break;
+                type = leftDown;
+                break;
             case kCGEventRightMouseDragged:
-            type = rightDragged;
-            break;
+                type = rightDragged;
+                break;
             case kCGEventRightMouseUp:
-            type = rightUp;
-            break;
+                type = rightUp;
+                break;
             case kCGEventRightMouseDown:
-            type = rightDown;
-            break;
+                type = rightDown;
+                break;
+            case kCGEventScrollWheel:
+                type = scroll;
+                break;
         }
         
-        MouseEvent *mouseEvent = [[MouseEvent alloc] initWithType:type deltaX:event.deltaX deltaY:event.deltaY];
+        MouseEventPhase phase = unknown;
+        
+        if (type == scroll) {
+            
+            deltaX = event.scrollingDeltaX;
+            deltaY = event.scrollingDeltaY;
+            
+            if (event.phase == NSEventPhaseBegan) {
+                phase = began;
+            }
+            else if (event.phase == NSEventPhaseChanged) {
+                phase = changed;
+            }
+            else if (event.phase == NSEventPhaseEnded){
+                phase = ended;
+            }
+        }
+        
+        MouseEvent *mouseEvent = [[MouseEvent alloc] initWithType:type phase:phase deltaX:deltaX deltaY:deltaY];
         
         NSDictionary *dict = [mouseEvent toDict];
         
@@ -164,12 +184,10 @@
         return event;
     }];
 }
-    
-    
+
+
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 }
-    
-    
-    
-    @end
+
+@end
