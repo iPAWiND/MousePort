@@ -17,19 +17,25 @@ typedef enum {
     leftDragged,
     rightDown,
     rightUp,
-    rightDragged
+    rightDragged,
+    scroll
 } MouseEventType;
 
-@interface MouseEvent : NSObject
+typedef enum {
+    began,
+    changed,
+    ended,
+    momentumEnded,
+    unknown
+} MouseEventPhase;
 
+@interface MouseEvent : NSObject
 
 @property (nonatomic) MouseEventType type;
 @property (nonatomic) int deltaX;
 @property (nonatomic) int deltaY;
 
--(instancetype)initWithType:(MouseEventType)type;
--(instancetype)initWithType:(MouseEventType)type deltaX:(int)deltaX deltaY:(int)deltaY;
--(instancetype)initFromDict:(NSDictionary *)dict;
+-(instancetype)initWithType:(MouseEventType)type phase:(MouseEventPhase)phase deltaX:(int)deltaX deltaY:(int)deltaY;
 
 -(NSDictionary *)toDict;
 
